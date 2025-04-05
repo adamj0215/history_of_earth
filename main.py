@@ -8,10 +8,12 @@ clock = pygame.time.Clock()
 room = 1
 running = True
 
+YRS_FONT = pygame.font.SysFont("Times New Roman", SCREEN_HEIGHT // 16, bold=True)
 TITLE_FONT = pygame.font.SysFont("Times New Roman", SCREEN_HEIGHT // 6, bold=True)
 PLAY_FONT = pygame.font.SysFont("Arial", SCREEN_HEIGHT // 10, bold=True)
 title_surface = TITLE_FONT.render("HISTORY OF EARTH", True, "white")
 play_surface = PLAY_FONT.render("PLAY", True, "green")
+yrs_surface = YRS_FONT.render("4500 MYA", True, "orange")
 play_surface_pos = (
     SCREEN_WIDTH * 0.75 - play_surface.get_width() / 2,
     360
@@ -52,6 +54,15 @@ while running:
     elif room == 1:
         screen.blit(sun, (640, 360))
         screen.blit(hadean_earth1, (100, 100))
+        screen.blit(yrs_surface, (5, 5))
+    """
+    elif room == 1:
+        screen.blit(sun, (640, 360))
+        screen.blit(hadean_earth1, (100, 100))
+    elif room == 1:
+        screen.blit(sun, (640, 360))
+        screen.blit(hadean_earth1, (100, 100))
+    """
 
     pygame.display.flip()
 
